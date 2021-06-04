@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body{margin:0;
+    height:100vh;
+    background-color:rgb(219, 170, 170);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("images/1.jpg");
+    }
+p {
+    text-align: center;
+    font-size: 80px;
+    color: rgb(201, 108, 108);
+    padding: 40px;
+    margin:20px;
+    background-color: rgb(75, 61, 199);
+    border-radius: 20px;
+}
+H1{
+    text-align: center;
+    color: rgb(230, 225, 225);
+    font-size: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 12px;
+    border-image: auto;
+}
+</style>
+</head>
+<body>
+    
+<H1> Days remaining to New year 2022 </H1>
+<p id="demo"></p>
+
+<script>
+
+var countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
+
+
+var x = setInterval(function() {
+
+
+  var now = new Date().getTime();
+    
+
+  var distance = countDownDate - now;
+    
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
